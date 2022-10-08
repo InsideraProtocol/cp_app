@@ -15,7 +15,7 @@ export const reducerInitiator = (state, action) => {
 const persistConfig = {
   key: "InsiderProtocol",
   storage: AsyncStorage,
-  whitelist: ["language", "theme"],
+  whitelist: ["clientAuth", "language", "theme"],
 };
 
 const persistedReducer = persistReducer(persistConfig, appReducer);

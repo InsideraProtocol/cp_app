@@ -11,6 +11,10 @@ import { PersistGate } from "redux-persist/integration/react";
 import { I18nextProvider } from "react-i18next";
 import { i18next } from "./src/localization";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./index.css";
+
 export default function App() {
   const isLoadingComplete = useCachedResources();
 

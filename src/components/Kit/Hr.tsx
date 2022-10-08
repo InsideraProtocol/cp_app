@@ -13,7 +13,7 @@ export function Hr(props: HrProps) {
     <Card
       _width={horizontal ? "1px" : "100%"}
       _height={horizontal ? "100%" : "1px"}
-      bg={Colors.darkOpacity15}
+      bg={Colors.gray100}
       margin={[5, 0]}
       {...restProps}
     />

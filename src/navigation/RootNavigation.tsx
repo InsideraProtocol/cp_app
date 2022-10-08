@@ -1,6 +1,6 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { OnBoardingScreen } from "../screens/OnBoardingScreen";
+import { OnBoardingScreen } from "../screens/onBoarding/OnBoardingScreen";
 import {
   DarkTheme,
   DefaultTheme,
@@ -16,6 +16,13 @@ import { languageUtil } from "../utils/language";
 import { useLanguage } from "../redux/modules/language/language";
 import { headerStyle } from "./headerStyle";
 import { HeaderBackButton } from "../components/BackButton/HeaderBackButton";
+import { useClientAuth } from "../redux/modules/auth/clientAuth";
+import { AuthStackNavigator } from "./AuthStack";
+
+import { LinkingOptions } from "@react-navigation/native";
+import * as Linking from "expo-linking";
+
+import { AuthStackParamsList, AuthStackRoutes } from "./AuthStack";
 
 const toastProviderProps = {
   placement: "bottom" as any,
@@ -44,15 +51,35 @@ const toastProviderProps = {
 
 export type RootStackParamList = {
   [Routes.ON_BOARDING]: undefined;
+  [Routes.AUTH_NAVIGATOR]: undefined;
 };
 
 export enum Routes {
   ON_BOARDING = "ON_BOARDING",
+  AUTH_NAVIGATOR = "AUTH_NAVIGATOR",
 }
+
+const linking: LinkingOptions<RootStackParamList & AuthStackParamsList> = {
+  prefixes: [Linking.createURL("/")],
+  config: {
+    screens: {
+      [Routes.ON_BOARDING]: "on-boarding",
+      [Routes.AUTH_NAVIGATOR]: {
+        path: "auth",
+        screens: {
+          [AuthStackRoutes.LOGIN]: "/login",
+          [AuthStackRoutes.SIGN_UP]: "/signup",
+        },
+      },
+    },
+  },
+};
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export function RootNavigation() {
+  const { onboarded, loggedIn } = useClientAuth();
+
   const { bottom } = useSafeAreaInsets();
   const [theme, name] = useThemeColors();
   const { locale } = useLanguage();
@@ -65,8 +92,9 @@ export function RootNavigation() {
         {...toastProviderProps}
       />
       <NavigationContainer
+        linking={linking}
         ref={navigationRef}
-        theme={name === "dark" ? DarkTheme : DefaultTheme}
+        theme={DefaultTheme}
       >
         <Stack.Navigator
           screenOptions={({ navigation }) => {
@@ -85,13 +113,22 @@ export function RootNavigation() {
                   ? () => <HeaderBackButton onPress={navigation.goBack} />
                   : undefined,
               animationEnabled: true,
+              headerShown: false,
             };
           }}
         >
-          <Stack.Screen
-            name={Routes.ON_BOARDING}
-            component={OnBoardingScreen}
-          />
+          {!onboarded ? (
+            <Stack.Screen
+              name={Routes.ON_BOARDING}
+              component={OnBoardingScreen}
+            />
+          ) : null}
+          {!loggedIn ? (
+            <Stack.Screen
+              name={Routes.AUTH_NAVIGATOR}
+              component={AuthStackNavigator}
+            />
+          ) : null}
         </Stack.Navigator>
       </NavigationContainer>
     </>

@@ -109,7 +109,7 @@ export type SetBorder = {
 export const setBorder = (props: SetBorder) => {
   const { border, theme, borderColor, borderStyle, borderWidth } = props;
   if (border === true) {
-    return setStyle({ _border: `1px solid ${theme?.border}` });
+    return setStyle({ _border: `1px solid ${theme?.black}` });
   } else if (border) {
     return setStyle({ _border: border });
   } else if (borderColor && borderStyle && borderWidth) {

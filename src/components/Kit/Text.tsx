@@ -80,7 +80,7 @@ export function Text(props: TextProps) {
     margin,
     padding,
     localeString = false,
-    color = Colors.primaryText,
+    color = Colors.dark,
     translationParams,
     toUpperCase,
     ...restProps

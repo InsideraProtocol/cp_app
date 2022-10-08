@@ -55,4 +55,15 @@ export const en = {
   joinFact: "Join Fact Rooms",
   submitTrans: "Submit transaction",
   claimRewards: "Claim Rewards",
+  screenHeaders: {
+    approveTransaction: "Approve Transaction",
+  },
+  approveScreen: {
+    chooseMethod: "choose how to payment",
+    senders: "Sender’s information",
+    howMuch: "How much did use x receive?",
+    gotMoney: "I got the money",
+  },
+  usd: `<Text>{{value}}</Text> USD`,
+  email: "Email",
 };

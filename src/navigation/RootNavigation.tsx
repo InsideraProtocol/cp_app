@@ -23,10 +23,11 @@ import { LinkingOptions } from "@react-navigation/native";
 import * as Linking from "expo-linking";
 
 import { AuthStackParamsList, AuthStackRoutes } from "./AuthStack";
+import { TabNavigatorStackRoutes } from "./TabNavigatorStack";
 import {
-  TabNavigatorStack,
-  TabNavigatorStackRoutes,
-} from "./TabNavigatorStack";
+  LoggedInNavigator,
+  LoggedInStackRoutes,
+} from "./LoggedInNavigatorStack";
 
 const toastProviderProps = {
   placement: "bottom" as any,
@@ -56,13 +57,13 @@ const toastProviderProps = {
 export type RootStackParamList = {
   [Routes.ON_BOARDING]: undefined;
   [Routes.AUTH_NAVIGATOR]: undefined;
-  [Routes.TAB_NAVIGATOR]: undefined;
+  [Routes.LOGGED_IN_NAVIGATOR]: undefined;
 };
 
 export enum Routes {
   ON_BOARDING = "ON_BOARDING",
   AUTH_NAVIGATOR = "AUTH_NAVIGATOR",
-  TAB_NAVIGATOR = "TAB_NAVIGATOR",
+  LOGGED_IN_NAVIGATOR = "LOGGED_IN_NAVIGATOR",
 }
 
 const linking: LinkingOptions<RootStackParamList & AuthStackParamsList> = {
@@ -77,14 +78,20 @@ const linking: LinkingOptions<RootStackParamList & AuthStackParamsList> = {
           [AuthStackRoutes.SIGN_UP]: "/signup",
         },
       },
-      [Routes.TAB_NAVIGATOR]: {
+      [Routes.LOGGED_IN_NAVIGATOR]: {
         path: "/",
         screens: {
-          [TabNavigatorStackRoutes.HOME]: "/home",
-          [TabNavigatorStackRoutes.SAMPLE_ONE]: "/one",
-          [TabNavigatorStackRoutes.SAMPLE_TWO]: "/two",
-          [TabNavigatorStackRoutes.SAMPLE_THREE]: "/three",
-          [TabNavigatorStackRoutes.SAMPLE_FOUR]: "/four",
+          [LoggedInStackRoutes.APPROVE_TRANSACTION]: "/approve",
+          [LoggedInStackRoutes.TAB_NAVIGATOR]: {
+            path: "/",
+            screens: {
+              [TabNavigatorStackRoutes.HOME]: "/home",
+              [TabNavigatorStackRoutes.SAMPLE_ONE]: "/one",
+              [TabNavigatorStackRoutes.SAMPLE_TWO]: "/two",
+              [TabNavigatorStackRoutes.SAMPLE_THREE]: "/three",
+              [TabNavigatorStackRoutes.SAMPLE_FOUR]: "/four",
+            },
+          },
         },
       },
     },
@@ -146,8 +153,8 @@ export function RootNavigation() {
             />
           ) : (
             <Stack.Screen
-              name={Routes.TAB_NAVIGATOR}
-              component={TabNavigatorStack}
+              name={Routes.LOGGED_IN_NAVIGATOR}
+              component={LoggedInNavigator}
             />
           )}
         </Stack.Navigator>

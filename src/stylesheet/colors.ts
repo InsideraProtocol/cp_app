@@ -16,6 +16,7 @@ const mainColors: DefaultTheme = {
   green: "#36E1C6",
   red: "#DC4126",
   yellow: "#a2961e",
+  pink: "#FCB3C5",
 
   success: "",
   failure: "",
@@ -60,6 +61,7 @@ export enum Colors {
   failure = "failure",
   transparent = "transparent",
   gray = "gray",
+  pink = "pink",
 }
 
 export { colors, mainColors, lightColors };

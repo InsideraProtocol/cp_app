@@ -23,6 +23,10 @@ import { LinkingOptions } from "@react-navigation/native";
 import * as Linking from "expo-linking";
 
 import { AuthStackParamsList, AuthStackRoutes } from "./AuthStack";
+import {
+  TabNavigatorStack,
+  TabNavigatorStackRoutes,
+} from "./TabNavigatorStack";
 
 const toastProviderProps = {
   placement: "bottom" as any,
@@ -52,11 +56,13 @@ const toastProviderProps = {
 export type RootStackParamList = {
   [Routes.ON_BOARDING]: undefined;
   [Routes.AUTH_NAVIGATOR]: undefined;
+  [Routes.TAB_NAVIGATOR]: undefined;
 };
 
 export enum Routes {
   ON_BOARDING = "ON_BOARDING",
   AUTH_NAVIGATOR = "AUTH_NAVIGATOR",
+  TAB_NAVIGATOR = "TAB_NAVIGATOR",
 }
 
 const linking: LinkingOptions<RootStackParamList & AuthStackParamsList> = {
@@ -69,6 +75,16 @@ const linking: LinkingOptions<RootStackParamList & AuthStackParamsList> = {
         screens: {
           [AuthStackRoutes.LOGIN]: "/login",
           [AuthStackRoutes.SIGN_UP]: "/signup",
+        },
+      },
+      [Routes.TAB_NAVIGATOR]: {
+        path: "/",
+        screens: {
+          [TabNavigatorStackRoutes.HOME]: "/home",
+          [TabNavigatorStackRoutes.SAMPLE_ONE]: "/one",
+          [TabNavigatorStackRoutes.SAMPLE_TWO]: "/two",
+          [TabNavigatorStackRoutes.SAMPLE_THREE]: "/three",
+          [TabNavigatorStackRoutes.SAMPLE_FOUR]: "/four",
         },
       },
     },
@@ -128,7 +144,12 @@ export function RootNavigation() {
               name={Routes.AUTH_NAVIGATOR}
               component={AuthStackNavigator}
             />
-          ) : null}
+          ) : (
+            <Stack.Screen
+              name={Routes.TAB_NAVIGATOR}
+              component={TabNavigatorStack}
+            />
+          )}
         </Stack.Navigator>
       </NavigationContainer>
     </>

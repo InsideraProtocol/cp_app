@@ -9,7 +9,7 @@ export type AppVersionProps = CenterTextProps;
 export function AppVersion(props: AppVersionProps) {
   return (
     <CenterText
-      color={Colors.gray300}
+      color={Colors.gray200}
       typo="xs"
       translationParams={{ version }}
       {...props}

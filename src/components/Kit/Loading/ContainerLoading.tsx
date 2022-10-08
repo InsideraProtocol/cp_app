@@ -16,7 +16,7 @@ export function ContainerLoading(props: ContainerLoadingProps) {
     <Card
       flex={Number(container)}
       _position="relative"
-      bg={loading ? Colors.loadingOpacity : undefined}
+      bg={loading ? Colors.gray100 : undefined}
       {...containerProps}
     >
       {children}

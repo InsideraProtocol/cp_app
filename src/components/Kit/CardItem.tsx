@@ -10,7 +10,7 @@ export function CardItem(props: CardItemProps) {
       curve={Curves.md}
       padding={2}
       shadow
-      bg={Colors.primaryBg}
+      bg={Colors.screenBg}
       {...props}
     />
   );

@@ -1,5 +1,6 @@
 export const en = {
   hello: "Hello",
+  insiderProtocol: "Insider Protocol",
   onBoarding: {
     first: {
       title: "Build a Fact Room",
@@ -43,4 +44,15 @@ export const en = {
   },
   terms: "terms of use | privacy policy",
   securedBy: "Secured by",
+  hi: "Hi, {{name}}",
+  rewards: "Your pending rewards",
+  localPayment: "Use a local payment tool?",
+  learn: "Learn how to earn rewards out of it",
+  remember:
+    "Remember that new fact rooms\n pay more, don’t forget to be early!",
+  pendingApproval: "Pending Approval",
+  pendingRewards: "Rewards",
+  joinFact: "Join Fact Rooms",
+  submitTrans: "Submit transaction",
+  claimRewards: "Claim Rewards",
 };

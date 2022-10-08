@@ -17,7 +17,7 @@ export function SearchInput() {
         padding={[0, 2]}
         flexDirection="row"
         alignItems="center"
-        bg={Colors.primaryBg}
+        bg={Colors.screenBg}
       >
         <TextInput
           _height="50px"

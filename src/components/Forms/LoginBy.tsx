@@ -7,12 +7,15 @@ import {
   validateEmail,
 } from "../../validators/validateEmail";
 import { Colors, Curves } from "../../stylesheet";
+import { useClientAuth } from "../../redux/modules/auth/clientAuth";
 
 export type TEmailForm = {
   email: string;
 };
 
 export function LoginBy() {
+  const { dispatchUserLoggedIn } = useClientAuth();
+
   const emailForm = useForm<TEmailForm>({
     mode: "onChange",
     defaultValues: {
@@ -23,7 +26,7 @@ export function LoginBy() {
 
   const handleSubmitEmail = emailForm.handleSubmit(({ email }) => {
     if (validateEmail(email)) {
-      console.log("email is valid");
+      dispatchUserLoggedIn();
     }
   });
 
@@ -60,6 +63,7 @@ export function LoginBy() {
             borderStyle="solid"
             curve={Curves.circle}
             disabled={!emailForm.formState.isValid}
+            onPress={handleSubmitEmail}
           />
         </Card>
         <Hr />
@@ -75,6 +79,7 @@ export function LoginBy() {
             borderColor={Colors.gray200}
             borderStyle="solid"
             curve={Curves.circle}
+            onPress={handleSubmitEmail}
           />
         </Card>
         <Spacer />

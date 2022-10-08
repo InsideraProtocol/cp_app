@@ -74,7 +74,7 @@ export const TextInput = forwardRef<RNTextInput, TextInputProps>(
       border,
       curve,
       iconName,
-      color = Colors.primaryText,
+      color = Colors.dark,
       placeholder,
       locale,
       error,
@@ -92,14 +92,14 @@ export const TextInput = forwardRef<RNTextInput, TextInputProps>(
         {/*) : null}*/}
         <StyledTextInput
           border={border}
-          bg={Colors.gray900}
+          bg={Colors.gray200}
           curve={curve ?? Curves.circle}
           {...restProps}
           color={color}
           $margin={margin}
           $padding={padding ?? [1, 2]}
           placeholder={placeholder ? t(placeholder) : undefined}
-          placeholderTextColor={themeColors.gray500}
+          placeholderTextColor={themeColors.gray200}
           ref={ref}
           locale={locale || i18n.language}
           underlineColorAndroid="#ffffff00"

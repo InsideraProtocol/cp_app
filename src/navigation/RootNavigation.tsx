@@ -162,17 +162,14 @@ export function RootNavigation() {
             name={Routes.ON_BOARDING}
             component={OnBoardingScreen}
           />
-          {!loggedIn ? (
-            <Stack.Screen
-              name={Routes.AUTH_NAVIGATOR}
-              component={AuthStackNavigator}
-            />
-          ) : (
-            <Stack.Screen
-              name={Routes.LOGGED_IN_NAVIGATOR}
-              component={LoggedInNavigator}
-            />
-          )}
+          <Stack.Screen
+            name={Routes.AUTH_NAVIGATOR}
+            component={AuthStackNavigator}
+          />
+          <Stack.Screen
+            name={Routes.LOGGED_IN_NAVIGATOR}
+            component={LoggedInNavigator}
+          />
           <Stack.Screen
             name={Routes.GET_DISPUTE_FEEDBACK}
             component={GetDisputeFeedBackScreen}

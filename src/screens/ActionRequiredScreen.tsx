@@ -51,13 +51,17 @@ export function ActionRequiredScreen() {
             <Button />
             <Button
               text="yes"
+              padding={[3, 0]}
               bg={Colors.orange}
+              textProps={{ color: Colors.white }}
               onPress={() => console.log("no pressed")}
             />
             <Spacer />
             <Button
               text="no"
+              padding={[3, 0]}
               bg={Colors.success}
+              textProps={{ color: Colors.white }}
               onPress={() => console.log("yes pressed")}
             />
           </Card>

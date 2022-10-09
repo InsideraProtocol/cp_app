@@ -18,7 +18,7 @@ export function HomeScreen() {
     <SafeAreaView flex={1}>
       <ScrollView>
         <Card padding={[0, 3]}>
-          <PendingRewards name="Armin Bakhshi" rewards="0.15" />
+          <PendingRewards name="Hamed Navabian" rewards="0.15" />
           <Spacer times={3} />
           <ShortLinks />
           <Spacer />

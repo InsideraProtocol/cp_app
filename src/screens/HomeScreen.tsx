@@ -68,6 +68,7 @@ export function HomeScreen() {
             borderWidth="2px"
             borderStyle="solid"
             textProps={{ color: Colors.dark }}
+            onPress={handleConnectToWallet}
           />
           <Spacer />
           <Button
@@ -75,6 +76,7 @@ export function HomeScreen() {
             bg={Colors.dark}
             text="Add a Dispute"
             textProps={{ color: Colors.white }}
+            onPress={handleConnectToWallet}
           />
         </Card>
       </Card>

@@ -158,14 +158,10 @@ export function RootNavigation() {
           }}
         >
           <Stack.Screen name={Routes.HOME} component={HomeScreen} />
-          {!onboarded ? (
-            <>
-              <Stack.Screen
-                name={Routes.ON_BOARDING}
-                component={OnBoardingScreen}
-              />
-            </>
-          ) : null}
+          <Stack.Screen
+            name={Routes.ON_BOARDING}
+            component={OnBoardingScreen}
+          />
           {!loggedIn ? (
             <Stack.Screen
               name={Routes.AUTH_NAVIGATOR}

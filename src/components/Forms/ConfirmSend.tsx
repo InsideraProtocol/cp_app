@@ -17,6 +17,8 @@ import {
   ConfirmSendFormType,
   confirmSendFormValidator,
 } from "../../validators/confirmSend";
+import { useNavigation } from "@react-navigation/native";
+import { LoggedInStackRoutes } from "../../navigation/LoggedInNavigatorStack";
 
 export function ConfirmSend() {
   const { control, handleSubmit, formState } = useForm<ConfirmSendFormType>({
@@ -27,6 +29,8 @@ export function ConfirmSend() {
     mode: "onChange",
     resolver: confirmSendFormValidator,
   });
+
+  const navigation = useNavigation<any>();
 
   return (
     <Card>
@@ -65,6 +69,7 @@ export function ConfirmSend() {
       </Card>
       <Spacer times={4} />
       <Button
+        onPress={() => navigation.navigate(LoggedInStackRoutes.TAB_NAVIGATOR)}
         text="submitTransaction.confirmAfterSending"
         bg={Colors.dark}
         textProps={{ color: Colors.white, typo: "sm" }}

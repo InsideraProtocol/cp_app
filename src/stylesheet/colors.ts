@@ -34,14 +34,14 @@ const colors: DefaultTheme = {
 
 const lightColors: DefaultTheme = {
   ...colors,
-  light: colors.dark,
-  black: colors.light,
-  white: colors.white,
+  // light: colors.dark,
+  // black: colors.light,
+  // white: colors.white,
 
   // grayOpacity50: hexToRgba(colors.light, 0.5),
-  dark: colors.light,
-  gray200: "#474747",
-  gray100: "#252525",
+  // dark: colors.light,
+  // gray200: "#474747",
+  // gray100: "#252525",
   shadow: "0px 7px 16px 0px #000000",
 };
 

@@ -10,6 +10,12 @@ import {
 import { GoBackHeader } from "../components/InsiderProtocolHeader/GoBackHeader";
 import { FactRooms } from "../components/FactRooms/FactRooms";
 import { colors, Colors, Curves } from "../stylesheet";
+import { useNavigation } from "@react-navigation/native";
+import { AuthStackRoutes } from "../navigation/AuthStack";
+import {
+  LoggedInNavigator,
+  LoggedInStackRoutes,
+} from "../navigation/LoggedInNavigatorStack";
 
 export const factRooms = [
   {
@@ -39,6 +45,8 @@ export const factRooms = [
 ];
 
 export function JoinFactRoomScreen() {
+  const navigation = useNavigation<any>();
+
   return (
     <SafeAreaView flex={1}>
       <GoBackHeader screenTitle="joinFact" />
@@ -61,7 +69,11 @@ export function JoinFactRoomScreen() {
               joinFactScreen.areYouFintech
             </Text>
             <Spacer times={0.5} />
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate(LoggedInStackRoutes.TAB_NAVIGATOR)
+              }
+            >
               <Text color={Colors.blue} bold typo="sm">
                 joinFactScreen.createRoom
               </Text>

@@ -21,6 +21,8 @@ import {
   ConfirmReceiveFormType,
   confirmReceiveValidator,
 } from "../../validators/confirmReceive";
+import { LoggedInStackRoutes } from "../../navigation/LoggedInNavigatorStack";
+import { useNavigation } from "@react-navigation/native";
 
 export type ConfirmReceiveProps = {
   hasInsider?: boolean;
@@ -37,6 +39,8 @@ export function ConfirmReceive(props: ConfirmReceiveProps) {
     mode: "onChange",
     resolver: confirmReceiveValidator,
   });
+
+  const navigation = useNavigation<any>();
 
   return (
     <Card>
@@ -81,6 +85,7 @@ export function ConfirmReceive(props: ConfirmReceiveProps) {
       />
       {hasInsider ? (
         <Button
+          onPress={() => navigation.navigate(LoggedInStackRoutes.TAB_NAVIGATOR)}
           text="skip"
           bg={Colors.screenBg}
           textProps={{ color: Colors.dark, typo: "sm" }}

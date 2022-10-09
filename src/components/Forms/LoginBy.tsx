@@ -8,6 +8,8 @@ import {
 } from "../../validators/validateEmail";
 import { Colors, Curves } from "../../stylesheet";
 import { useClientAuth } from "../../redux/modules/auth/clientAuth";
+import { useNavigation } from "@react-navigation/native";
+import { Routes } from "../../navigation/RootNavigation";
 
 export type TEmailForm = {
   email: string;
@@ -15,6 +17,7 @@ export type TEmailForm = {
 
 export function LoginBy() {
   const { dispatchUserLoggedIn } = useClientAuth();
+  const navigation = useNavigation<any>();
 
   const emailForm = useForm<TEmailForm>({
     mode: "onChange",
@@ -26,7 +29,8 @@ export function LoginBy() {
 
   const handleSubmitEmail = emailForm.handleSubmit(({ email }) => {
     if (validateEmail(email)) {
-      dispatchUserLoggedIn();
+      // dispatchUserLoggedIn();
+      navigation.navigate(Routes.LOGGED_IN_NAVIGATOR);
     }
   });
 

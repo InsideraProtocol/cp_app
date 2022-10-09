@@ -3,8 +3,12 @@ import { Button, Card, SafeAreaView, Spacer, Text } from "../components/Kit";
 import { GoBackHeader } from "../components/InsiderProtocolHeader/GoBackHeader";
 import { Colors, Curves } from "../stylesheet";
 import { Trans } from "react-i18next";
+import { useNavigation } from "@react-navigation/native";
+import { LoggedInStackRoutes } from "../navigation/LoggedInNavigatorStack";
 
 export function ActionRequiredScreen() {
+  const navigation = useNavigation<any>();
+
   return (
     <SafeAreaView flex={1}>
       <GoBackHeader screenTitle="actionRequired" />
@@ -54,7 +58,9 @@ export function ActionRequiredScreen() {
               padding={[3, 0]}
               bg={Colors.orange}
               textProps={{ color: Colors.white }}
-              onPress={() => console.log("no pressed")}
+              onPress={() =>
+                navigation.navigate(LoggedInStackRoutes.TAB_NAVIGATOR)
+              }
             />
             <Spacer />
             <Button
@@ -62,7 +68,9 @@ export function ActionRequiredScreen() {
               padding={[3, 0]}
               bg={Colors.success}
               textProps={{ color: Colors.white }}
-              onPress={() => console.log("yes pressed")}
+              onPress={() =>
+                navigation.navigate(LoggedInStackRoutes.TAB_NAVIGATOR)
+              }
             />
           </Card>
         </Card>

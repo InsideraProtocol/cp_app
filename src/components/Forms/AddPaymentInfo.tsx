@@ -13,6 +13,8 @@ import {
   addPaymentValidator,
 } from "../../validators/addPaymentInfo";
 import { Colors, Curves } from "../../stylesheet";
+import { useNavigation } from "@react-navigation/native";
+import { LoggedInStackRoutes } from "../../navigation/LoggedInNavigatorStack";
 
 export function AddPaymentInfo() {
   const { control, handleSubmit, formState } = useForm<AddPaymentFormType>({
@@ -23,6 +25,8 @@ export function AddPaymentInfo() {
     mode: "onChange",
     resolver: addPaymentValidator,
   });
+
+  const navigation = useNavigation<any>();
 
   return (
     <Card>
@@ -64,6 +68,7 @@ export function AddPaymentInfo() {
       </Text>
       <Spacer times={4} />
       <Button
+        onPress={() => navigation.navigate(LoggedInStackRoutes.TAB_NAVIGATOR)}
         text="submitTransaction.confirm"
         bg={Colors.dark}
         textProps={{ color: Colors.white, typo: "sm" }}

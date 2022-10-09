@@ -41,6 +41,8 @@ export const en = {
   },
   placeholders: {
     email: "Email",
+    emailEx: "Example: john@email.comc",
+    date: "Between 10/12/2022 to 12/12/2022",
   },
   terms: "terms of use | privacy policy",
   securedBy: "Secured by",
@@ -57,6 +59,8 @@ export const en = {
   claimRewards: "Claim Rewards",
   screenHeaders: {
     approveTransaction: "Approve Transaction",
+    joinFact: "Join Fact Rooms",
+    submitTransaction: "Submit Transaction",
   },
   approveScreen: {
     chooseMethod: "choose how to payment",
@@ -64,6 +68,33 @@ export const en = {
     howMuch: "How much did use x receive?",
     gotMoney: "I got the money",
   },
-  usd: `<Text>{{value}}</Text> USD`,
+  joinFactScreen: {
+    title: "Select a Insider Room to join",
+    witnesses: "{{witnesses}} Witnesses",
+    rewards: "${{rewards}} rewards",
+    areYouFintech: "Are you a Fintech Insider?",
+    createRoom: "Create your Insider Room",
+  },
+  notificationsScreen: {
+    title: "Actions Required",
+    final: "Final Rewards",
+  },
+  submitTransaction: {
+    addYourInfo: "Add your payment information",
+    payMethod: "Payment Method",
+    payInfo: "Payment Info",
+    recipient: "Recipient’s Payment Information",
+    details:
+      "Your payment information will be passed to\n random witnesses so they can send you small\n amounts of money. You’ll later need to confirm or\n deny their claim of payment. Payment\n information are end-to-end encrypted and can\n be seen by select witnesses appointed to you.",
+    confirm: "Confirm Payment Information",
+    confirmAfterSending: "Confirm Only After Sending",
+    needSend: "You need to send",
+    didYouReceive: "Did you receive?",
+    payDate: "Payment Date",
+    insiderTold: "An Insider told you had \n received the following payment",
+  },
+  usd: `<Text>{{value}} USD</Text>`,
   email: "Email",
+  confirm: "Confirm",
+  skip: "Skip",
 };

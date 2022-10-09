@@ -9,8 +9,10 @@ const mainColors: DefaultTheme = {
   dark: "#2B2B2B",
   gray: "#595F67",
   gray100: "#D0D3D8",
+  screenBg: "#EEEEEE",
   gray200: "#EEEEEE",
-  screenBg: "#FFFFFF",
+  // screenBg: "#FFFFFF",
+  blue: "#516AE4",
   shadow: "0px 7px 16px 0px #00000099",
   transparent: "transparent",
   green: "#36E1C6",
@@ -62,6 +64,7 @@ export enum Colors {
   transparent = "transparent",
   gray = "gray",
   pink = "pink",
+  blue = "blue",
 }
 
 export { colors, mainColors, lightColors };

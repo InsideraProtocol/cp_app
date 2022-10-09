@@ -81,14 +81,16 @@ const linking: LinkingOptions<RootStackParamList & AuthStackParamsList> = {
       [Routes.LOGGED_IN_NAVIGATOR]: {
         path: "/",
         screens: {
-          [LoggedInStackRoutes.APPROVE_TRANSACTION]: "/approve",
+          [LoggedInStackRoutes.APPROVE_TRANSACTION]: "/approve-transaction",
+          [LoggedInStackRoutes.SUBMIT_TRANSACTION]: "/submit-transaction",
+          [LoggedInStackRoutes.JOIN_FACT_ROOMS]: "/join-fact-rooms",
           [LoggedInStackRoutes.TAB_NAVIGATOR]: {
             path: "/",
             screens: {
               [TabNavigatorStackRoutes.HOME]: "/home",
               [TabNavigatorStackRoutes.SAMPLE_ONE]: "/one",
               [TabNavigatorStackRoutes.SAMPLE_TWO]: "/two",
-              [TabNavigatorStackRoutes.SAMPLE_THREE]: "/three",
+              [TabNavigatorStackRoutes.NOTIFICATION]: "/notifications",
               [TabNavigatorStackRoutes.SAMPLE_FOUR]: "/four",
             },
           },

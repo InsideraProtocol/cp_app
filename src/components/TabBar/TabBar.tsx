@@ -13,7 +13,7 @@ const tabBarOptions = {
   SAMPLE_TWO: {
     icon: "plus-circle",
   },
-  SAMPLE_THREE: {
+  NOTIFICATION: {
     icon: "bell",
   },
   SAMPLE_FOUR: {
@@ -27,7 +27,7 @@ export function TabBar({ state, descriptors, navigation }) {
   return (
     <Card
       flexDirection="row"
-      bg={Colors.white}
+      bg={Colors.screenBg}
       _height={`${64 + (bottom || 0)}px`}
       alignItems="center"
       justifyContent="center"

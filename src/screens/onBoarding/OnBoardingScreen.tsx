@@ -10,12 +10,15 @@ import { colors, Colors, Curves } from "../../stylesheet";
 import { OnBoardingSlider } from "./components/OnBoardingSlider";
 import { useClientAuth } from "../../redux/modules/auth/clientAuth";
 import { InsiderProtocolHeader } from "../../components/InsiderProtocolHeader/InsiderProtocolHeader";
+import { useNavigation } from "@react-navigation/native";
+import { Routes } from "../../navigation/RootNavigation";
 
 export function OnBoardingScreen() {
   const { dispatchOnboarded } = useClientAuth();
+  const navigation = useNavigation<any>();
 
   const handleLogin = useCallback(() => {
-    dispatchOnboarded();
+    navigation.navigate(Routes.AUTH_NAVIGATOR);
   }, []);
 
   return (

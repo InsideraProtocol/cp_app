@@ -157,9 +157,9 @@ export function RootNavigation() {
             };
           }}
         >
+          <Stack.Screen name={Routes.HOME} component={HomeScreen} />
           {!onboarded ? (
             <>
-              <Stack.Screen name={Routes.HOME} component={HomeScreen} />
               <Stack.Screen
                 name={Routes.ON_BOARDING}
                 component={OnBoardingScreen}

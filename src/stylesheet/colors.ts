@@ -1,5 +1,4 @@
 import { DefaultTheme } from "styled-components/native";
-import { hexToRgba } from "../utils/color";
 
 const mainColors: DefaultTheme = {
   white: "#FFF",
@@ -11,7 +10,7 @@ const mainColors: DefaultTheme = {
   gray100: "#D0D3D8",
   screenBg: "#F8F8F8",
   gray200: "#EEEEEE",
-  // screenBg: "#FFFFFF",
+  gray300: "#989898",
   blue: "#516AE4",
   shadow: "0px 7px 16px 0px #00000099",
   transparent: "transparent",
@@ -67,6 +66,7 @@ export enum Colors {
   pink = "pink",
   blue = "blue",
   orange = "orange",
+  gray300 = "gray300",
 }
 
 export { colors, mainColors, lightColors };

@@ -5,6 +5,7 @@ import onBoardingOne from "./on-boarding-one.png";
 import onBoardingTwo from "./on-boarding-two.png";
 import onBoardingThree from "./on-boarding-three.png";
 import localPayment from "./localPeyment.png";
+import homePageBg from "./homePageBg.png";
 
 export {
   adaptiveIcon,
@@ -14,4 +15,5 @@ export {
   onBoardingTwo,
   onBoardingThree,
   localPayment,
+  homePageBg,
 };

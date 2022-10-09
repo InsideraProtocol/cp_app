@@ -1,13 +1,13 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { HomeScreen } from "../screens/HomeScreen";
+import { ProfileScreen } from "../screens/ProfileScreen";
 import { InsiderProtocolHeader } from "../components/InsiderProtocolHeader/InsiderProtocolHeader";
 import { TabBar } from "../components/TabBar/TabBar";
 import { JoinFactRoomScreen } from "../screens/JoinFactRoomScreen";
 import { NotificationsScreen } from "../screens/NotificationsScreen";
 
 export type TabNavigatorParamsList = {
-  [TabNavigatorStackRoutes.HOME]: undefined;
+  [TabNavigatorStackRoutes.PROFILE]: undefined;
   [TabNavigatorStackRoutes.SAMPLE_ONE]: undefined;
   [TabNavigatorStackRoutes.SAMPLE_TWO]: undefined;
   [TabNavigatorStackRoutes.NOTIFICATION]: undefined;
@@ -15,7 +15,7 @@ export type TabNavigatorParamsList = {
 };
 
 export enum TabNavigatorStackRoutes {
-  HOME = "HOME",
+  PROFILE = "PROFILE",
   SAMPLE_ONE = "SAMPLE_ONE",
   SAMPLE_TWO = "SAMPLE_TWO",
   NOTIFICATION = "NOTIFICATION",
@@ -33,16 +33,16 @@ export function TabNavigatorStack() {
       tabBar={(props) => <TabBar {...props} />}
     >
       <TabNavigator.Screen
-        name={TabNavigatorStackRoutes.HOME}
-        component={HomeScreen}
+        name={TabNavigatorStackRoutes.PROFILE}
+        component={ProfileScreen}
       />
       <TabNavigator.Screen
         name={TabNavigatorStackRoutes.SAMPLE_ONE}
-        component={HomeScreen}
+        component={ProfileScreen}
       />
       <TabNavigator.Screen
         name={TabNavigatorStackRoutes.SAMPLE_TWO}
-        component={HomeScreen}
+        component={ProfileScreen}
       />
       <TabNavigator.Screen
         name={TabNavigatorStackRoutes.NOTIFICATION}
@@ -50,7 +50,7 @@ export function TabNavigatorStack() {
       />
       <TabNavigator.Screen
         name={TabNavigatorStackRoutes.SAMPLE_FOUR}
-        component={HomeScreen}
+        component={ProfileScreen}
       />
     </TabNavigator.Navigator>
   );

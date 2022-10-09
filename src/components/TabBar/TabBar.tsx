@@ -4,7 +4,7 @@ import { Colors, Curves } from "../../stylesheet";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const tabBarOptions = {
-  HOME: {
+  PROFILE: {
     icon: "home",
   },
   SAMPLE_ONE: {

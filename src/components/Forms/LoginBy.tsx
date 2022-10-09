@@ -73,7 +73,7 @@ export function LoginBy() {
           </Text>
           <Spacer />
           <Button
-            text="auth.withEmail"
+            text="auth.withWallet"
             bg={Colors.screenBg}
             borderWidth="1px"
             borderColor={Colors.gray200}

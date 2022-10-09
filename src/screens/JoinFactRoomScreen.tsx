@@ -12,9 +12,30 @@ import { FactRooms } from "../components/FactRooms/FactRooms";
 import { colors, Colors, Curves } from "../stylesheet";
 
 export const factRooms = [
-  { id: "1", name: "Paypal", witnesses: "1/4", rewards: "120" },
-  { id: "2", name: "Paypal", witnesses: "2/4", rewards: "110" },
-  { id: "3", name: "Paypal", witnesses: "1/4", rewards: "150" },
+  {
+    id: "1",
+    name: "Paypal",
+    witnesses: "1/4",
+    rewards: "120",
+    recipient: "aardsfsdfsafdsfasdfasdfsadfsdf",
+    status: "paid",
+  },
+  {
+    id: "2",
+    name: "Paypal",
+    witnesses: "2/4",
+    rewards: "110",
+    recipient: "aardsfsdfsafdsfdsfasfasfadsf",
+    status: "paid",
+  },
+  {
+    id: "3",
+    name: "Paypal",
+    witnesses: "1/4",
+    rewards: "150",
+    recipient: "aardsfsdfsafasfasfdsfdasffs",
+    status: "notPaid",
+  },
 ];
 
 export function JoinFactRoomScreen() {

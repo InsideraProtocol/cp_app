@@ -9,6 +9,7 @@ import {
 import { colors, Colors, Curves } from "../../stylesheet";
 import { OnBoardingSlider } from "./components/OnBoardingSlider";
 import { useClientAuth } from "../../redux/modules/auth/clientAuth";
+import { InsiderProtocolHeader } from "../../components/InsiderProtocolHeader/InsiderProtocolHeader";
 
 export function OnBoardingScreen() {
   const { dispatchOnboarded } = useClientAuth();
@@ -19,6 +20,7 @@ export function OnBoardingScreen() {
 
   return (
     <SafeAreaView flex={1} bg={Colors.screenBg}>
+      <InsiderProtocolHeader />
       <ScrollView>
         <OnBoardingSlider />
         <Spacer times={4} />

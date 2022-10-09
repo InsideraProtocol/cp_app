@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Spacer, Text } from "../Kit";
 import { Colors, Curves } from "../../stylesheet";
+import { shortenedString } from "../../utils/shortenedString";
 
 export type FactRoomsProps = {
   factRooms: {
@@ -8,11 +9,14 @@ export type FactRoomsProps = {
     name: string;
     witnesses: string;
     rewards: string;
+    recipient?: string;
+    status: string;
   }[];
+  prev?: boolean;
 };
 
 export function FactRooms(props: FactRoomsProps) {
-  const { factRooms } = props;
+  const { factRooms, prev } = props;
 
   return (
     <Card>
@@ -33,16 +37,33 @@ export function FactRooms(props: FactRoomsProps) {
                 {room.name}
               </Text>
               <Spacer times={0.5} />
-              <Text
-                translationParams={{ witnesses: room.witnesses }}
-                color={Colors.gray}
-              >
-                joinFactScreen.witnesses
-              </Text>
+              {prev ? (
+                <Text
+                  translationParams={{
+                    recipient: shortenedString(room.recipient, 16, 4),
+                  }}
+                  color={Colors.gray}
+                >
+                  joinFactScreen.recipient
+                </Text>
+              ) : (
+                <Text
+                  translationParams={{
+                    rewards: room.rewards,
+                  }}
+                  color={Colors.gray}
+                >
+                  joinFactScreen.rewards
+                </Text>
+              )}
             </Card>
-            <Text typo="lg" translationParams={{ rewards: room.rewards }}>
-              joinFactScreen.rewards
-            </Text>
+            {prev ? (
+              <Text typo="lg">{`joinFactScreen.${room.status}`}</Text>
+            ) : (
+              <Text typo="lg" translationParams={{ rewards: room.rewards }}>
+                joinFactScreen.rewards
+              </Text>
+            )}
           </Card>
         ))
       ) : (

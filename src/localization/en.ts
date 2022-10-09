@@ -1,6 +1,6 @@
 export const en = {
   hello: "Hello",
-  insiderProtocol: "Insider Protocol",
+  insiderProtocol: "Insidera Protocol",
   providersScreen: {
     withEmail: "Login with Email",
     withWallet: "Login with Crypto Wallets",
@@ -47,6 +47,7 @@ export const en = {
     email: "Email",
     emailEx: "Example: john@email.comc",
     date: "Between 10/12/2022 to 12/12/2022",
+    amount: "Amount",
   },
   terms: "terms of use | privacy policy",
   securedBy: "Secured by",
@@ -80,6 +81,9 @@ export const en = {
     rewards: "${{rewards}} rewards",
     areYouFintech: "Are you a Fintech Insider?",
     createRoom: "Create your Insider Room",
+    recipient: "Recipient {{ recipient }}",
+    paid: "Paid",
+    notPaid: "Not Paid",
   },
   notificationsScreen: {
     title: "Actions Required",
@@ -105,6 +109,21 @@ export const en = {
   },
   actionReqScreen: {
     yourData: "Based on your data, \n\n Is this payment correct?",
+  },
+  getDisputeFeedBack: {
+    title: "Get Dispute Feedback",
+    chooseMethod: "Choose Payment Method",
+    recipientInfo: "Recipient Payment Info",
+    amountPaid: "Amount Paid",
+    details:
+      "Payment information will be passed to Insiders\n so they can approve or deny this payment.\n Payment information are end-to-end encrypted.",
+    send: "Confirm and Send",
+    seePrevRes: "See Previous Results",
+  },
+  pasDisputesScreen: {
+    title: "Past Dispute Results",
+    haveAny: "Have a new dispute?",
+    feedback: "Get feedback from Insiders",
   },
   usd: `<Text>{{value}} USD</Text>`,
   email: "Email",

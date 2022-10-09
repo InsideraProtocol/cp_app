@@ -28,6 +28,9 @@ import {
   LoggedInNavigator,
   LoggedInStackRoutes,
 } from "./LoggedInNavigatorStack";
+import { GetDisputeFeedBackScreen } from "../screens/GetDisputeFeedBackScreen";
+import { PastDisputesScreen } from "../screens/PastDisputesScreen";
+import { HomeScreen } from "../screens/HomeScreen";
 
 const toastProviderProps = {
   placement: "bottom" as any,
@@ -55,22 +58,31 @@ const toastProviderProps = {
 };
 
 export type RootStackParamList = {
+  [Routes.HOME]: undefined;
   [Routes.ON_BOARDING]: undefined;
   [Routes.AUTH_NAVIGATOR]: undefined;
   [Routes.LOGGED_IN_NAVIGATOR]: undefined;
+  [Routes.GET_DISPUTE_FEEDBACK]: undefined;
+  [Routes.PAST_DISPUTES]: undefined;
 };
 
 export enum Routes {
+  HOME = "HOME",
   ON_BOARDING = "ON_BOARDING",
   AUTH_NAVIGATOR = "AUTH_NAVIGATOR",
   LOGGED_IN_NAVIGATOR = "LOGGED_IN_NAVIGATOR",
+  GET_DISPUTE_FEEDBACK = "GET_DISPUTE_FEEDBACK",
+  PAST_DISPUTES = "PAST_DISPUTES",
 }
 
 const linking: LinkingOptions<RootStackParamList & AuthStackParamsList> = {
   prefixes: [Linking.createURL("/")],
   config: {
     screens: {
+      [Routes.HOME]: "/home",
       [Routes.ON_BOARDING]: "on-boarding",
+      [Routes.PAST_DISPUTES]: "past-disputes",
+      [Routes.GET_DISPUTE_FEEDBACK]: "get-dispute-feedback",
       [Routes.AUTH_NAVIGATOR]: {
         path: "auth",
         screens: {
@@ -90,7 +102,7 @@ const linking: LinkingOptions<RootStackParamList & AuthStackParamsList> = {
           [LoggedInStackRoutes.TAB_NAVIGATOR]: {
             path: "/",
             screens: {
-              [TabNavigatorStackRoutes.HOME]: "/home",
+              [TabNavigatorStackRoutes.PROFILE]: "/profile",
               [TabNavigatorStackRoutes.SAMPLE_ONE]: "/one",
               [TabNavigatorStackRoutes.SAMPLE_TWO]: "/two",
               [TabNavigatorStackRoutes.NOTIFICATION]: "/notifications",
@@ -146,10 +158,13 @@ export function RootNavigation() {
           }}
         >
           {!onboarded ? (
-            <Stack.Screen
-              name={Routes.ON_BOARDING}
-              component={OnBoardingScreen}
-            />
+            <>
+              <Stack.Screen name={Routes.HOME} component={HomeScreen} />
+              <Stack.Screen
+                name={Routes.ON_BOARDING}
+                component={OnBoardingScreen}
+              />
+            </>
           ) : null}
           {!loggedIn ? (
             <Stack.Screen
@@ -162,6 +177,14 @@ export function RootNavigation() {
               component={LoggedInNavigator}
             />
           )}
+          <Stack.Screen
+            name={Routes.GET_DISPUTE_FEEDBACK}
+            component={GetDisputeFeedBackScreen}
+          />
+          <Stack.Screen
+            name={Routes.PAST_DISPUTES}
+            component={PastDisputesScreen}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </>

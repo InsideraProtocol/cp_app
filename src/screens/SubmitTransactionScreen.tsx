@@ -16,9 +16,9 @@ import { ConfirmReceive } from "../components/Forms/ConfirmReceive";
 export function SubmitTransactionScreen() {
   const [state, setState] = useState<
     "addInfo" | "send" | "receive" | "insider"
-  >("receive");
+  >("addInfo");
 
-  const hasInsider = true;
+  const hasInsider = false;
 
   const renderElement = () => {
     switch (state) {

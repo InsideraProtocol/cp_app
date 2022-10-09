@@ -70,6 +70,7 @@ export function ConfirmReceive(props: ConfirmReceiveProps) {
           borderStyle="solid"
           placeholder="placeholders.date"
           curve={Curves.md}
+          disabled={true}
         />
       </Card>
       <Spacer times={4} />

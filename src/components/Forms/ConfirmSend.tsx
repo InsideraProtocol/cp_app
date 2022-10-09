@@ -22,7 +22,7 @@ export function ConfirmSend() {
   const { control, handleSubmit, formState } = useForm<ConfirmSendFormType>({
     defaultValues: {
       method: "Paypal",
-      recipientInfo: "",
+      recipientInfo: "john@doe.com",
     },
     mode: "onChange",
     resolver: confirmSendFormValidator,
@@ -60,6 +60,7 @@ export function ConfirmSend() {
           borderStyle="solid"
           placeholder="placeholders.emailEx"
           curve={Curves.md}
+          disabled={true}
         />
       </Card>
       <Spacer times={4} />

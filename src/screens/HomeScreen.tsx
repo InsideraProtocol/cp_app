@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Card,
@@ -13,8 +13,22 @@ import { appIcon } from "../assets/icons";
 import { Colors, Curves } from "../stylesheet";
 import { useNavigation } from "@react-navigation/native";
 import { Routes } from "../navigation/RootNavigation";
+import { Dimensions } from "react-native";
 
 export function HomeScreen() {
+  const [dimensions, setDimensions] = useState({ window, screen });
+
+  useEffect(() => {
+    const subscription = Dimensions.addEventListener(
+      "change",
+      ({ window, screen }) => {
+        // @ts-ignore
+        setDimensions({ window, screen });
+      }
+    );
+    return () => subscription?.remove();
+  }, []);
+
   const { bottom, top } = useSafeAreaInsets();
   const navigation = useNavigation<any>();
 
@@ -34,7 +48,10 @@ export function HomeScreen() {
         alignItems="center"
         justifyContent="space-between"
       >
-        <Card flexDirection="row" alignItems="center">
+        <Card
+          flexDirection={dimensions.screen.width > 767 ? "row" : "column"}
+          alignItems="center"
+        >
           <Image source={appIcon} _width="24px" _height="24px" />
           <Spacer />
           <Text style={{ fontWeight: "700" }} typo="lg">
@@ -51,7 +68,11 @@ export function HomeScreen() {
       </Card>
       <Spacer times={6} />
       <Card padding={[0, 4]} alignItems="flex-end">
-        <Text style={{ fontWeight: "800" }} _textAlign="right" typo="xxl">
+        <Text
+          style={{ fontWeight: "800" }}
+          _textAlign="right"
+          typo={dimensions.screen.width > 1000 ? "xxl" : "xl"}
+        >
           {
             "Unstoppable Justice Protocol for Crypto\nRamps and P2P Exchange Disputes"
           }

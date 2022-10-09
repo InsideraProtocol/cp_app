@@ -23,7 +23,7 @@ import {
 } from "../../validators/confirmReceive";
 
 export type ConfirmReceiveProps = {
-  hasInsider: boolean;
+  hasInsider?: boolean;
 };
 
 export function ConfirmReceive(props: ConfirmReceiveProps) {

@@ -8,9 +8,9 @@ export function LoginScreen() {
   return (
     <SafeAreaView flex={1}>
       <Card>
-        <Card padding={[2, 0]}>
+        <Card padding={[0, 0]}>
           <Card
-            bg={Colors.screenBg}
+            bg={Colors.white}
             flexDirection="row"
             alignItems="center"
             padding={4}
@@ -36,7 +36,7 @@ export function LoginScreen() {
             </Card>
           </Card>
         </Card>
-        <Card flex={1} padding={[0, 4]} _width="100%">
+        <Card padding={[2, 4]} _width="100%" bg={Colors.white}>
           <Card
             flexDirection="row"
             justifyContent="space-between"

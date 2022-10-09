@@ -1,6 +1,10 @@
 export const en = {
   hello: "Hello",
   insiderProtocol: "Insider Protocol",
+  providersScreen: {
+    withEmail: "Login with Email",
+    withWallet: "Login with Crypto Wallets",
+  },
   onBoarding: {
     first: {
       title: "Build a Fact Room",
@@ -61,6 +65,8 @@ export const en = {
     approveTransaction: "Approve Transaction",
     joinFact: "Join Fact Rooms",
     submitTransaction: "Submit Transaction",
+    claimRewards: "Claim Rewards",
+    actionRequired: "Actions Required",
   },
   approveScreen: {
     chooseMethod: "choose how to payment",
@@ -93,8 +99,17 @@ export const en = {
     payDate: "Payment Date",
     insiderTold: "An Insider told you had \n received the following payment",
   },
+  claimRewardsScreen: {
+    claim: "Claimable Rewards",
+    claimBtn: "Claim",
+  },
+  actionReqScreen: {
+    yourData: "Based on your data, \n\n Is this payment correct?",
+  },
   usd: `<Text>{{value}} USD</Text>`,
   email: "Email",
   confirm: "Confirm",
   skip: "Skip",
+  yes: "Yes",
+  no: "No",
 };

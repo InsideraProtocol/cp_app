@@ -15,7 +15,7 @@ export function ShortLinks() {
     navigation.navigate(LoggedInStackRoutes.SUBMIT_TRANSACTION);
   }, []);
   const handleNavigateToClaimRewards = useCallback(() => {
-    navigation.navigate(LoggedInStackRoutes.TAB_NAVIGATOR);
+    navigation.navigate(LoggedInStackRoutes.CLAIM_REWARDS);
   }, []);
 
   return (

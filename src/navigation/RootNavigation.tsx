@@ -74,6 +74,7 @@ const linking: LinkingOptions<RootStackParamList & AuthStackParamsList> = {
       [Routes.AUTH_NAVIGATOR]: {
         path: "auth",
         screens: {
+          [AuthStackRoutes.PROVIDERS]: "/providers",
           [AuthStackRoutes.LOGIN]: "/login",
           [AuthStackRoutes.SIGN_UP]: "/signup",
         },
@@ -84,6 +85,8 @@ const linking: LinkingOptions<RootStackParamList & AuthStackParamsList> = {
           [LoggedInStackRoutes.APPROVE_TRANSACTION]: "/approve-transaction",
           [LoggedInStackRoutes.SUBMIT_TRANSACTION]: "/submit-transaction",
           [LoggedInStackRoutes.JOIN_FACT_ROOMS]: "/join-fact-rooms",
+          [LoggedInStackRoutes.CLAIM_REWARDS]: "/claim-rewards",
+          [LoggedInStackRoutes.ACTION_REQUIRED]: "/action-required",
           [LoggedInStackRoutes.TAB_NAVIGATOR]: {
             path: "/",
             screens: {

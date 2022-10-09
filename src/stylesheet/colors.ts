@@ -9,7 +9,7 @@ const mainColors: DefaultTheme = {
   dark: "#2B2B2B",
   gray: "#595F67",
   gray100: "#D0D3D8",
-  screenBg: "#EEEEEE",
+  screenBg: "#F8F8F8",
   gray200: "#EEEEEE",
   // screenBg: "#FFFFFF",
   blue: "#516AE4",
@@ -19,8 +19,9 @@ const mainColors: DefaultTheme = {
   red: "#DC4126",
   yellow: "#a2961e",
   pink: "#FCB3C5",
+  orange: "#F2994A",
+  success: "#67B68C",
 
-  success: "",
   failure: "",
   warning: "",
 };
@@ -65,6 +66,7 @@ export enum Colors {
   gray = "gray",
   pink = "pink",
   blue = "blue",
+  orange = "orange",
 }
 
 export { colors, mainColors, lightColors };
